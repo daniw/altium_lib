@@ -19,3 +19,7 @@ Scripts/digikey_password.py
 
 #Local Documentation
 *.pdf
+
+
+# FreeCAD
+*.FCStd1
