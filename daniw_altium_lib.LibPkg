@@ -1103,6 +1103,23 @@ GenerateClassCluster=0
 DocumentUniqueId=FEUOBSPD
 
 [Document63]
+DocumentPath=PCB\Stäubli.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=YCEEVJTL
+
+[Document64]
 DocumentPath=PCB\Switch.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -1119,7 +1136,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FHPOSLBD
 
-[Document64]
+[Document65]
 DocumentPath=PCB\TAG_CONNECT.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -1136,7 +1153,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DUXALQRK
 
-[Document65]
+[Document66]
 DocumentPath=PCB\Testpoint.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -1153,7 +1170,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QMQCROBJ
 
-[Document66]
+[Document67]
 DocumentPath=PCB\THT_Connectors.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -1170,7 +1187,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VUQOBGSK
 
-[Document67]
+[Document68]
 DocumentPath=PCB\TO.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -1187,7 +1204,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=MPHHASBN
 
-[Document68]
+[Document69]
 DocumentPath=..\altium_lib_private\PCB\Toradex.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -1204,7 +1221,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NRDKIRSE
 
-[Document69]
+[Document70]
 DocumentPath=PCB\USB.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -1221,7 +1238,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VOHRUYPS
 
-[Document70]
+[Document71]
 DocumentPath=PCB\Wago.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -1238,7 +1255,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=UKUBUPWV
 
-[Document71]
+[Document72]
 DocumentPath=PCB\Wuerth.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
