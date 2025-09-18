@@ -1,7 +1,7 @@
 [OutputDatabaseLinkFile]
 Version=1.1
 [DatabaseLinks]
-ConnectionString=Provider=MICROSOFT.ACE.OLEDB.12.0;Data Source=C:\Daten\Temp\altium_lib\daniw_altium_lib.xlsx;Extended Properties="Excel 8.0;HDR=Yes;IMEX=1"
+ConnectionString=Provider=MICROSOFT.ACE.OLEDB.12.0;Data Source=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.xlsx;Extended Properties="Excel 8.0;HDR=Yes;IMEX=1"
 AddMode=3
 RemoveMode=1
 UpdateMode=2
@@ -19,7 +19,7 @@ LibrarySearchPath=
 OrcadMultiValueDelimiter=,
 SearchSubDirectories=0
 SchemaName=
-LastFocusedTable=PrivateLibraryPath
+LastFocusedTable=C$
 [Table1]
 SchemaName=
 TableName=C$
@@ -38,18 +38,12 @@ TableName=CSchematicLib
 Enabled=False
 UserWhere=0
 UserWhereText=
-BrowserOrder_Sorting=
-BrowserOrder_Grouping=
-BrowserOrder_Visible=SCH/C_IEC#SchLib0=116
 [Table4]
 SchemaName=
 TableName=ConSchematicLib
 Enabled=False
 UserWhere=0
 UserWhereText=
-BrowserOrder_Sorting=
-BrowserOrder_Grouping=
-BrowserOrder_Visible=SCH/Connector#SchLib0=142
 [Table5]
 SchemaName=
 TableName=Config$
@@ -86,18 +80,12 @@ TableName=LSchematicLib
 Enabled=False
 UserWhere=0
 UserWhereText=
-BrowserOrder_Sorting=
-BrowserOrder_Grouping=
-BrowserOrder_Visible=SCH/L_ANSI#SchLib0=122
 [Table11]
 SchemaName=
 TableName=LSchematicLib#
 Enabled=False
 UserWhere=0
 UserWhereText=
-BrowserOrder_Sorting=
-BrowserOrder_Grouping=
-BrowserOrder_Visible=SCH/L_ANSI#SchLib0=122
 [Table12]
 SchemaName=
 TableName=Logic$
@@ -122,9 +110,6 @@ TableName=PrivateLibraryPath
 Enabled=False
 UserWhere=0
 UserWhereText=
-BrowserOrder_Sorting=
-BrowserOrder_Grouping=
-BrowserOrder_Visible=##/altium_lib_private/0=135
 [Table16]
 SchemaName=
 TableName=R$
@@ -135,6 +120,12 @@ UserWhereText=
 SchemaName=
 TableName=Start$
 Enabled=False
+UserWhere=0
+UserWhereText=
+[Table18]
+SchemaName=
+TableName=T$
+Enabled=True
 UserWhere=0
 UserWhereText=
 [FieldMap1]
@@ -245,3 +236,15 @@ Options=FieldName=R$.Library Ref|TableNameOnly=R$|FieldNameOnly=Library Ref|Fiel
 Options=FieldName=R$.Footprint Path|TableNameOnly=R$|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
 [FieldMap54]
 Options=FieldName=R$.Footprint Ref|TableNameOnly=R$|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap55]
+Options=FieldName=T$.Part Number|TableNameOnly=T$|FieldNameOnly=Part Number|FieldType=0|ParameterName=Part Number|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap56]
+Options=FieldName=T$.Description|TableNameOnly=T$|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap57]
+Options=FieldName=T$.Library Path|TableNameOnly=T$|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap58]
+Options=FieldName=T$.Library Ref|TableNameOnly=T$|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap59]
+Options=FieldName=T$.Footprint Path|TableNameOnly=T$|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap60]
+Options=FieldName=T$.Footprint Ref|TableNameOnly=T$|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
