@@ -12,7 +12,7 @@ Special care must be taken to avoid wrong connections.
 ### Recommended procedure for an update from the library
 It is recommended to follow this procedure for updating from the library: 
 * Create a printout of the schematic as reference (PDF or on paper)
-* update the PCB from the schematic
+* update the PCB from the schematic (it might be necessary to perform multiple times)
 * Note all changes from the ECO that cannot be resolved
 * Update the schematic from the library
 * Go through each schematic sheet and move any misplaced symbols back to its original location
