@@ -18,14 +18,14 @@ os.environ['DIGIKEY_STORAGE_PATH'] = str(CACHE_DIR)
 API_LIMIT = {}
 
 ################## ORDER CONFIG ######################################
-BASE_ORDER_CODE = 'CC0402 NPO9BN'
+BASE_ORDER_CODE = 'CC0201 NPO BN'
 DIELECTRIC = 'C0G'
 
-BASE_ORDER_CODE = 'CC0402 X7R9BB'
+BASE_ORDER_CODE = 'CC0201 X7R BB'
 DIELECTRIC = 'X7R'
 
-VOLTAGE_RATING = 50
-PACKAGE = "0402"
+#VOLTAGE_RATING = 50
+PACKAGE = "0201"
 #E 12
 E_LIST = [10,12,15, 18 ,22, 27, 33, 39, 47, 56, 68,82]
 GAINS = [1,10,100]
@@ -46,7 +46,8 @@ def get_order_code(productNumber):
     result = digikey.keyword_search(body=search_request, api_limits=API_LIMIT)
     # select results if packaging is CUT-Tape (CT) and minimum order quantity is 1
     #print(result)
-    orderable_parts = [(t.standard_pricing[-1].unit_price, t.manufacturer.value, t.manufacturer_part_number, t.digi_key_part_number,  t.primary_datasheet) 
+    
+    orderable_parts = [(t.standard_pricing[-1].unit_price, t.manufacturer.value, t.manufacturer_part_number, t.digi_key_part_number,  t.primary_datasheet, next((p.value for p in t.parameters if p.parameter_id == 14),'0V')) 
         for t in result.products if t.packaging.value_id == '2' and t.minimum_order_quantity == 1]
     # Sord by price
     orderable_parts = sorted(orderable_parts, key=lambda a: a[0])
@@ -79,16 +80,27 @@ if __name__ == '__main__':
                     orderable_parts = get_order_code(get_code(BASE_ORDER_CODE, value*UNIT_GAIN[unit]))
                     
                     if(len(orderable_parts) > 0):
-                        f.write(F"{unitvalue}/{PACKAGE}/{VOLTAGE_RATING}V/{DIELECTRIC}	{unitvalue}/{PACKAGE}/{VOLTAGE_RATING}V/{DIELECTRIC}	CAP SM {PACKAGE} {unitvalue.lower()}F {VOLTAGE_RATING}V {DIELECTRIC} " + 
-                        F"	GENERIC	{PACKAGE}	{unitvalue.lower()}F	SCH/C_EU.SchLib	C	PCB/SMT_CHIP.PcbLib	CAP{PACKAGE}_{DIELECTRIC}	{value*UNIT_GAIN[unit]*1e-13:.2}	" + 
-                        F"{orderable_parts[0][4]}")
-                        i=0
-                        for t in orderable_parts: 
+                        highest = [max(orderable_parts, key=lambda x: float(x[5][:-1]))]
+                    
+                        for t in highest:
+                            f.write(F"{unitvalue}/{PACKAGE}/{t[5]}/{DIELECTRIC}	{unitvalue}/{PACKAGE}/{t[5]}/{DIELECTRIC}	CAP SM {PACKAGE} {unitvalue.lower()}F {t[5]} {DIELECTRIC} " + 
+                            F"	GENERIC	{PACKAGE}	{unitvalue.lower()}F	SCH/C_EU.SchLib	C	PCB/SMT_CHIP.PcbLib	CAP{PACKAGE}_{DIELECTRIC}	{value*UNIT_GAIN[unit]*1e-13:.2}	" + 
+                            F"{t[4]}")
                             f.write(F"	{t[1]}	{t[2]}	Digi-Key	{t[3]}")
-                            i += 1
-                            if(i>=2): 
-                                break;
                         f.write(F"\n")
+                    
+                    ##For Multiple identical order codes
+                    #if(len(orderable_parts) > 0):
+                    #    f.write(F"{unitvalue}/{PACKAGE}/{VOLTAGE_RATING}V/{DIELECTRIC}	{unitvalue}/{PACKAGE}/{VOLTAGE_RATING}V/{DIELECTRIC}	CAP SM {PACKAGE} {unitvalue.lower()}F {VOLTAGE_RATING}V {DIELECTRIC} " + 
+                    #    F"	GENERIC	{PACKAGE}	{unitvalue.lower()}F	SCH/C_EU.SchLib	C	PCB/SMT_CHIP.PcbLib	CAP{PACKAGE}_{DIELECTRIC}	{value*UNIT_GAIN[unit]*1e-13:.2}	" + 
+                    #    F"{orderable_parts[0][4]}")
+                    #    i=0
+                    #    for t in orderable_parts: 
+                    #        f.write(F"	{t[1]}	{t[2]}	Digi-Key	{t[3]}")
+                    #        i += 1
+                    #        if(i>=2): 
+                    #            break;
+                    #    f.write(F"\n")
     
     #
     print(F"Current Digikey Limit {API_LIMIT}")

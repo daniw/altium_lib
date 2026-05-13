@@ -18,7 +18,7 @@ os.environ['DIGIKEY_STORAGE_PATH'] = str(CACHE_DIR)
 API_LIMIT = {}
 
 ################## ORDER CONFIG ######################################
-PACKAGE = "0402"
+PACKAGE = "0201"
 BASE_ORDER_CODE = F'RC{PACKAGE}FR-.'+'{2}'
 
 
